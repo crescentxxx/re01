@@ -1,1 +1,14 @@
 v0.4
+
+本地有了git仓库后如何使用github呢？
+打开github添加右上角加号，点击new repository，选择id，填写一个项目名，这里填了re01，和本地仓库一样的名字
+接着按照页面中“or create a new repository on the command line”的指示来做
+（其实我们要做的创建了远程仓库，生成了一个远程仓库地址后，将本地仓库关联到这个远程仓库，也就是给本地仓库设置一个网盘地址）
+首先在本地git项目中添加一个readme.md文档
+echo "# re01" >> README.md
+git add .
+git commit -m "add README.md"
+创建一个main分支，-M是将本来的master分支改名成main分支
+git branch -M main
+给这个项目添加一个远程仓库地址，相当于给这个git项目设置一个网盘地址
+git remote add origin https://github.com/hailyxu/re01.git
