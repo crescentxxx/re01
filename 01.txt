@@ -12,3 +12,34 @@ git commit -m "add README.md"
 git branch -M main
 给这个项目添加一个远程仓库地址，相当于给这个git项目设置一个网盘地址
 git remote add origin https://github.com/hailyxu/re01.git
+
+
+
+补充知识
+
+1. 添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用，命令格式如下
+git remote add [short name] [url]
+
+[short name]：通常我们会使用origin，它代表远程仓库的主机名
+[url]：url就是你在GitHub上新建的仓库后得到的ssh地址或https地址
+
+2. 查看当前配置有哪些远程仓库，可以用命令：
+git remote 
+查看每个仓库short name的实际链接地址，使用命令：
+git remote -v
+
+3. git有两个命令用来提取远程仓库的更新
+1）git fetch
+从远程仓库下载新分支与数据
+该命令执行完后需要执行git merge远程分支到你所在的分支
+2）git merge
+从远端仓库提取数据并尝试合并到当前分支
+该命令就是在执行git fetch后紧接着执行git merge远程分支到你所在的任意分支
+
+假如你配置好了一个远程仓库，并且你想要提取更新的数据，你可以首先执行git fetch [alias] 告诉git去获取它有你没有的
+数据，然后你可以执行git merge [alias]/[branch]以将服务器上的任何更新合并到你的当前分支
+
+比如我们在GitHub上的仓库页面在线修改它
+
+
+
